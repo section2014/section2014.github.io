@@ -35,7 +35,7 @@
       <link href="/posts/54109.html"/>
       <url>/posts/54109.html</url>
       
-        <content type="html"><![CDATA[<h1 id="Java-开发中的各种-O-（待完善）"><a href="#Java-开发中的各种-O-（待完善）" class="headerlink" title="Java 开发中的各种 O （待完善）"></a>Java 开发中的各种 O （待完善）</h1><ul><li><strong>DO（ Data Object）：</strong> 此对象与数据库表结构一一对应，通过 DAO 层向上传输数据源对象。</li><li><strong>DTO（ Data Transfer Object）：</strong> 数据传输对象， Service 或 Manager 向外传输的对象。</li><li><strong>BO（ Business Object）：</strong> 业务对象， 由 Service 层输出的封装业务逻辑的对象。</li><li><strong>AO（ Application Object）：</strong> 应用对象， 在 Web 层与 Service 层之间抽象的复用对象模型，极为贴近展示层，复用度不高。</li><li><strong>VO（ View Object）：</strong> 显示层对象，通常是 Web 向模板渲染引擎层传输的对象。</li><li><strong>Query：</strong> 数据查询对象，各层接收上层的查询请求。 注意超过 2 个参数的查询封装，禁止使用 Map 类来传输。</li></ul><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+        <content type="html"><![CDATA[<h1 id="Java-开发中的各种-O"><a href="#Java-开发中的各种-O" class="headerlink" title="Java 开发中的各种 O"></a>Java 开发中的各种 O</h1><h5 id="POJO"><a href="#POJO" class="headerlink" title="POJO"></a>POJO</h5><p>Plain Ordinary Java Object</p><p>简单Java对象，就是一个我们最常见的普通Java对象。它具有一些属性，然后提供对应的getter和setter。</p><h5 id="JavaBean"><a href="#JavaBean" class="headerlink" title="JavaBean"></a>JavaBean</h5><p>可序列化的POJO。它需要实现序列化接口<code>java.io.Serializable</code>。</p><h5 id="DO"><a href="#DO" class="headerlink" title="DO"></a>DO</h5><p>Domain Object  [ DDD(领域驱动设计) ]</p><p>领域对象，也就是ORM框架中对应数据库的对象，业务实体。例如，对现实世界中的用户建模，抽象出来的DO可以叫为UserDO，通常情况下它用于与数据库的数据交互，通常也是一个JavaBean。</p><h5 id="PO"><a href="#PO" class="headerlink" title="PO"></a>PO</h5><p>Persistent Object</p><p>持久化对象，主要用于持久化层，与数据库对应，通常也是ORM框架中的实体对象，例如，使用JPA时候的Entity与数据库表做映射，通常是一个JavaBean。</p><p><strong>DO 和 PO 大部分时间是一样的，不过PO更倾向于有状态的对象。</strong></p><h5 id="DTO"><a href="#DTO" class="headerlink" title="DTO"></a>DTO</h5><p>Data Transfer Object</p><p>数据传输对象， 顾名思义就是用于传输数据的对象，通常用于处于不同架构层次或者不同子系统之间的数据传递，或者用于外部接口参数传递，以便提供不同粒度不同信息的数据，以免造成困惑干扰，通常也是一个JavaBean。Service 或 Manager 向外传输的对象。</p><h5 id="VO"><a href="#VO" class="headerlink" title="VO"></a>VO</h5><p>Value Object/View Object</p><p>就是用于保存数据的对象；在提供给页面使用的时候，也有人解释为View Object，就是对应页面展示数据的对象。显示层对象，通常是 Web 向模板渲染引擎层传输的对象。</p><p><strong>VO 里的每一个字段，是和你前台 html 页面相对应。</strong></p><h5 id="Query"><a href="#Query" class="headerlink" title="Query"></a>Query</h5><p>xxQuery</p><p>数据查询对象，各层接收上层的查询请求。</p><h5 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h5><ul><li><strong>BO（ Business Object）：</strong> 业务对象， 由 Service 层输出的封装业务逻辑的对象。</li><li><strong>AO（ Application Object）：</strong> 应用对象， 在 Web 层与 Service 层之间抽象的复用对象模型，极为贴近展示层，复用度不高。</li></ul><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
       <categories>
@@ -47,9 +47,9 @@
       
         <tags>
             
-            <tag> 领域模型 </tag>
-            
             <tag> 微服务 </tag>
+            
+            <tag> 领域模型 </tag>
             
         </tags>
       
@@ -74,9 +74,9 @@
       
         <tags>
             
-            <tag> 微服务 </tag>
-            
             <tag> Spring Boot </tag>
+            
+            <tag> 微服务 </tag>
             
         </tags>
       
